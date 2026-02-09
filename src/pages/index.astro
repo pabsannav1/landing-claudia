@@ -1,17 +1,439 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Claudia | Fisioterapeuta Pediátrica">
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="logo">Claudia</a>
+    <ul class="nav-links">
+      <li><a href="#video">Video</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#ubicaciones">Ubicaciones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-greeting">Hola, soy</p>
+      <h1 class="hero-name">Claudia</h1>
+      <p class="hero-tagline">
+        Fisioterapeuta pediátrica especializada en asesoramiento de lactancia.
+        Presencial y online.
+      </p>
+      <a href="#contacto" class="btn">Contáctame</a>
+    </div>
+    <div class="hero-image">
+      <div class="hero-photo-placeholder">
+        <span>Tu foto aquí</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VSL / VIDEO -->
+  <section id="video" class="section section-alt">
+    <h2 class="section-title">Conóceme mejor</h2>
+    <div class="video-wrapper">
+      <div class="video-placeholder">
+        <span class="play-icon">&#9654;</span>
+        <p>Tu video aquí</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <h2 class="section-title">Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="card-icon">&#129329;</span>
+        <h3>Asesoramiento lactancia materna</h3>
+        <p>Acompañamiento y resolución de dificultades durante la lactancia.</p>
+      </div>
+      <div class="service-card">
+        <span class="card-icon">&#129520;</span>
+        <h3>Seguimiento y valoración del neurodesarrollo</h3>
+        <p>Evaluación de los hitos del desarrollo psicomotor de tu bebé.</p>
+      </div>
+      <div class="service-card">
+        <span class="card-icon">&#128118;</span>
+        <h3>Deformaciones craneales</h3>
+        <p>Prevención y tratamiento de plagiocefalias y asimetrías.</p>
+      </div>
+      <div class="service-card">
+        <span class="card-icon">&#129494;</span>
+        <h3>Alteraciones neuromusculares</h3>
+        <p>Abordaje de tortícolis, hipotonía y otras alteraciones del tono.</p>
+      </div>
+      <div class="service-card">
+        <span class="card-icon">&#128153;</span>
+        <h3>Problemas digestivos</h3>
+        <p>Cólicos, reflujo y otras molestias digestivas del lactante.</p>
+      </div>
+      <div class="service-card">
+        <span class="card-icon">&#127788;</span>
+        <h3>Fisioterapia respiratoria</h3>
+        <p>Técnicas para mejorar la función respiratoria de los más pequeños.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIONES -->
+  <section id="ubicaciones" class="section section-alt">
+    <h2 class="section-title">Dónde puedes encontrarme</h2>
+    <div class="locations-grid">
+      <div class="location-card">
+        <span class="card-icon">&#127973;</span>
+        <h3>Clínica Leal Graciani</h3>
+        <p>Nervión, Sevilla</p>
+      </div>
+      <div class="location-card">
+        <span class="card-icon">&#127973;</span>
+        <h3>Edificio Palmera Center</h3>
+        <p>C/ Historiador Juan Manzano 2, Condequinto, Sevilla</p>
+      </div>
+      <div class="location-card">
+        <span class="card-icon">&#127973;</span>
+        <h3>Fisioshana</h3>
+        <p>Mairena del Alcor, Sevilla</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <h2 class="section-title">Contacto</h2>
+    <p class="contact-text">
+      ¿Necesitas una consulta o quieres resolver alguna duda? Escríbeme.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:claudia@ejemplo.com" class="btn">Email</a>
+      <a href="#" class="btn btn-outline">LinkedIn</a>
+      <a href="#" class="btn btn-outline">Instagram</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Claudia. Todos los derechos reservados.</p>
+  </footer>
+</Layout>
+
+<style>
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(254, 254, 254, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #9b59b6;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #9b59b6;
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 7rem 4rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-greeting {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #888;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: #9b59b6;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-photo-placeholder {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #dcc6e0 0%, #c39bd3 50%, #b07cc6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(155, 89, 182, 0.18);
+  }
+
+  .hero-photo-placeholder span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #9b59b6;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .btn:hover {
+    background-color: #ab6ec5;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #9b59b6;
+    border: 2px solid #9b59b6;
+  }
+
+  .btn-outline:hover {
+    background-color: #9b59b6;
+    color: #fff;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 5rem 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-alt {
+    max-width: 100%;
+    background-color: #f9f3fc;
+  }
+
+  .section-alt > * {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #9b59b6;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  /* VIDEO / VSL */
+  .video-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b42 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .video-placeholder:hover {
+    transform: scale(1.01);
+  }
+
+  .play-icon {
+    font-size: 3rem;
+    color: #c39bd3;
+  }
+
+  .video-placeholder p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+  }
+
+  /* SHARED CARD STYLES */
+  .card-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* LOCATIONS */
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .location-card {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s;
+  }
+
+  .location-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .location-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #9b59b6;
+    margin-bottom: 0.5rem;
+  }
+
+  .location-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* CONTACT */
+  .contact-text {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+    color: #999;
+    border-top: 1px solid #eee;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 6rem 1.5rem 3rem;
+      gap: 2.5rem;
+    }
+
+    .hero-tagline {
+      max-width: 100%;
+    }
+
+    .hero-photo-placeholder {
+      max-width: 280px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .section {
+      padding: 3.5rem 1.25rem;
+    }
+  }
+</style>
