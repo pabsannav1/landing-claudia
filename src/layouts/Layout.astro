@@ -1,9 +1,20 @@
 ---
 interface Props {
   title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Fisioterapeuta pediátrica en Sevilla. Lactancia materna, neurodesarrollo, cólicos, tortícolis y fisioterapia respiratoria infantil. Consulta en Nervión, Condequinto y Mairena del Alcor.",
+  canonical,
+  ogImage = "/foto.jpeg",
+} = Astro.props;
+
+const canonicalURL = canonical || Astro.url.href;
+const ogImageURL = new URL(ogImage, Astro.site || Astro.url).href;
 ---
 
 <!doctype html>
@@ -12,8 +23,60 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Claudia - Web personal" />
+    <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HealthBusiness",
+      "name": "Claudia Cabotá - Fisioterapeuta Pediátrica",
+      "description": description,
+      "url": canonicalURL,
+      "telephone": "+34607276902",
+      "image": ogImageURL,
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "name": "Clínica Leal Graciani",
+          "addressLocality": "Sevilla",
+          "addressRegion": "Andalucía",
+          "addressCountry": "ES"
+        },
+        {
+          "@type": "PostalAddress",
+          "name": "Edificio Palmera Center",
+          "streetAddress": "C/ Historiador Juan Manzano 2",
+          "addressLocality": "Dos Hermanas",
+          "addressRegion": "Andalucía",
+          "addressCountry": "ES"
+        },
+        {
+          "@type": "PostalAddress",
+          "name": "Fisioshana",
+          "addressLocality": "Mairena del Alcor",
+          "addressRegion": "Andalucía",
+          "addressCountry": "ES"
+        }
+      ],
+      "sameAs": ["https://www.instagram.com/fisiopediatrica_claudiacabota/"]
+    })} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
