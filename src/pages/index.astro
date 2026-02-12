@@ -34,8 +34,8 @@ import Layout from "../layouts/Layout.astro";
   <section id="video" class="section section-alt">
     <h2 class="section-title">Quién soy</h2>
     <div class="video-wrapper">
-      <video class="video-player" controls preload="metadata">
-        <source src="/video.mp4" type="video/mp4" />
+      <video class="video-player" controls preload="metadata" playsinline>
+        <source src="/video.mp4#t=0.001" type="video/mp4" />
       </video>
     </div>
   </section>
@@ -133,7 +133,7 @@ import Layout from "../layouts/Layout.astro";
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(226, 215, 228, 0.9);
+    background: rgba(226, 215, 229, 0.9);
     backdrop-filter: blur(10px);
     z-index: 100;
     border-bottom: 1px solid #eee;
@@ -268,7 +268,7 @@ import Layout from "../layouts/Layout.astro";
 
   .section-alt {
     max-width: 100%;
-    background-color: #e2d7e4;
+    background-color: #e2d7e5;
   }
 
   .section-alt > * {
