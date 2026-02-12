@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
   <!-- NAV -->
   <header class="header">
     <nav class="nav">
-      <a href="#" class="logo"><img src="/logo.png" alt="Claudia" class="logo-img" /></a>
+      <a href="#" class="logo"><img src="/logo1.jpg" alt="Claudia" class="logo-img" /></a>
       <ul class="nav-links">
         <li><a href="#video">Quién soy</a></li>
         <li><a href="#servicios">Qué hago</a></li>
@@ -34,10 +34,9 @@ import Layout from "../layouts/Layout.astro";
   <section id="video" class="section section-alt">
     <h2 class="section-title">Quién soy</h2>
     <div class="video-wrapper">
-      <div class="video-placeholder">
-        <span class="play-icon">&#9654;</span>
-        <p>Tu video aquí</p>
-      </div>
+      <video class="video-player" controls preload="metadata">
+        <source src="/video.mp4" type="video/mp4" />
+      </video>
     </div>
   </section>
 
@@ -292,32 +291,9 @@ import Layout from "../layouts/Layout.astro";
     margin: 0 auto;
   }
 
-  .video-placeholder {
+  .video-player {
     width: 100%;
-    aspect-ratio: 16 / 9;
     border-radius: 16px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b42 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-
-  .video-placeholder:hover {
-    transform: scale(1.01);
-  }
-
-  .play-icon {
-    font-size: 3rem;
-    color: #c39bd3;
-  }
-
-  .video-placeholder p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.95rem;
   }
 
   /* SHARED CARD STYLES */
